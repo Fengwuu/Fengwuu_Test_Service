@@ -13,6 +13,7 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv, find_dotenv
 
+
 load_dotenv(find_dotenv())
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -86,6 +87,7 @@ DATABASES = {
         'HOST': '127.0.0.1',
         'PORT': '5432'
     }
+    
 }
 
 # Password validation
