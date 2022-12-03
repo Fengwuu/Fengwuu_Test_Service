@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title%}<title> Личный кабинет {{user.username}}</title> {% endblock%}
+{% block content%}
+
+<h1> Имя: {{nickname}}</h1>
+
+<h1>Аватар: </h1>
+<img src="{{avatar.url}} " alt="" style="width: 16rem; height: 15rem;">
+
+<h1>Выполненные тесты: </h1>
+{% if tests_completed %}
+{% for t in tests_completed%}
+<h2>{{ t }}</h2>
+{% endfor %}
+{% else %}
+<h2>Ни одного теста</h2>
+{% endif %}
+{% endblock %}

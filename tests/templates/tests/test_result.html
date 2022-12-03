@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title%}<title>Результаты теста</title>{% endblock %}
+{% block content%}
+<link rel="stylesheet" href="{%static 'css/result.css'%}">
+<div class="card">
+    <img src="https://st.depositphotos.com/1444927/2191/i/950/depositphotos_21916323-stock-photo-red-test.jpg"
+         class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">Тест - {{test}}</h5>
+        <p class="card-text">Оценка - {{score}} из {{test_len}}!</p>
+        <p class="card-text">Процент верных ответов - {{percent|floatformat:"1"}}%</p>
+        {% if percent >= 60%}
+        <p class="card-text">Вы справились! Данный тест занесен в Ваш профиль как пройденный</p>
+        {% else %}
+        <p class="card-text">Неудача! Попытайтесь снова.</p>
+        {% endif %}
+        <a href="/" class="btn btn-primary">На главую</a>
+    </div>
+</div>
+{% endblock %}

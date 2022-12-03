@@ -1,0 +1,31 @@
+{% extends 'base.html'%}
+{% block title%}<title>Тесты по категориям</title>{% endblock %}
+{%block content%}
+<h1>Here you can see tests about chosen category.</h1>
+{% for item in test%}
+
+<div style="padding: 0 0 0 20px; display:inline-block;">
+    <div class="card mt-4 " style="width: 17rem;">
+        <div class="card-footer text-muted">
+            {{ item.collection}} theme
+        </div>
+        {% if item.photo %}
+        <img src="{{item.photo.url}} " alt=""
+             class="card-img-top" style="width: 16rem; height: 15rem; margin-left: auto;
+    margin-right: auto;">
+        {%else %}
+        <img src="media/photos/added_photos/photo_2022-07-16_12-31-35.jpg" alt=""
+             style="width: 14rem; height: 15rem; margin-left: auto;
+    margin-right: auto;">
+        {%endif%}
+        <div class="card-body">
+            <h5 class="card-title">{{item.title}}</h5>
+            <p class="card-text">Here you can see test on {{item.title}} theme.</p>
+            <a href="/tests/test-completing/test/{{item.id}}/question/1 " class="btn btn-primary" style="background: #DC143C">Let's try</a>
+        </div>
+
+    </div>
+
+</div>
+{%endfor%}
+{%endblock%}

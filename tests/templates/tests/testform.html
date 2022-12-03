@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{%load static%}
+{% block title%}<title>Прохождение теста</title>{% endblock %}
+{% block content%}
+<link rel="stylesheet" href="{%static 'css/test_form.css'%}">
+<div class="card" id="abc">
+
+    {% if finish == 1%}
+    <form action="/tests/test-completing/result/"
+           method="post">
+    {%else %}
+    <form action="/tests/test-completing/test/{{test_id}}/question/{{next_question}}/"
+           method="post">
+    {% endif%}
+
+        {% csrf_token %}
+
+        {% if question.photo %}
+        <img src="{{question.photo.url}} " alt=""
+             class="card-img-top" id="question_img">
+        {%else %}
+
+        <img src="media/photos/added_photos/photo_2022-07-16_12-31-35.jpg" alt="">
+        {% endif %}
+
+        <h1>{{question.title}}</h1>
+        {% for answer in question.answer.all%}
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="{{answer}}" id="flexCheckDefault" name="choice">
+            <label class="form-check-label" for="{{form.choice.id_for_label}}">
+                {{answer}}
+            </label>
+        </div>
+        {% endfor %}
+
+        {% if finish == 1 %}
+        <button type="submit" class="btn btn-outline-success"> Отправить ответ</button>
+
+        {% else %}
+        <button type="submit" class="btn btn-outline-success"> Отправить ответ</button>
+        {% endif %}
+
+    </form>
+    </form>
+
+</div>
+{% endblock %}
+
+

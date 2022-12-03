@@ -1,0 +1,27 @@
+{%extends 'base.html'%}
+{% load static %}
+{% block title%}<title>Домашняя страница</title>{% endblock %}
+{% block content%}
+<h1>Here you can see categories of our tests</h1>
+        <link rel="stylesheet" href="{% static 'css/home_page.css'%}">
+{% for cat in category %}
+<div id="div_for_padding_all_card">
+    <div class="card mt-4 " >
+        {% if cat.photo %}
+        <img src="{{cat.photo.url}} " alt="..."
+             class="card-img-top" style="width: 16rem; height: 15rem; margin-left: auto;
+    margin-right: auto;">
+        {%else %}
+        <img src="media/photos/added_photos/photo_2022-07-16_12-31-35.jpg" alt=""
+             style="width: 14rem; height: 15rem; margin-left: auto;
+    margin-right: auto;">
+        {%endif%}
+        <div class="card-body">
+            <h5 class="card-title">{{cat.title}}</h5>
+            <p class="card-text">Here you can see test on {{cat.title}} theme.</p>
+            <a href="tests/categories/{{cat.pk}}" class="btn btn-primary" style="background: #DC143C">See tests</a>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
