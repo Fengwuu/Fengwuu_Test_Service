@@ -14,6 +14,12 @@ It will be a full-featured test service where you can:
 
 This is my project, I'm working very hard and I'm sure it has a great future. Its development is underway and it is not finished yet.
 
+## Future updates
+- Chat, where users can tell each other their opinion about test, and just talk
+- More optimisation
+- Likes and comments for tests
+- deepening of the DRF branch of project
+- reformating code to contain business logic in services.py
 
 ## License
 
@@ -55,6 +61,7 @@ This is my project, I'm working very hard and I'm sure it has a great future. It
 - Personal page with history of completed tests
 - Fully configured admin site
 - Excellent optimization!
+- Work with cache
 - And many, many more!
 
 ## Installation
