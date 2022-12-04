@@ -78,7 +78,7 @@ python manage.py runserver
 celery -A tasks worker --loglevel=INFO
 ```
 
- DONT FORGET TO PICK BUILD UP DATABASE!
+ DONT FORGET TO BUILD UP DATABASE!
 ## Support
 
 For support, mail filipp.pustovoitenko.work@gmail.com
