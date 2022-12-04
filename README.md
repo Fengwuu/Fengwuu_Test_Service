@@ -19,7 +19,7 @@ This is my project, I'm working very hard and I'm sure it has a great future. It
 - Likes and comments for tests
 - Deepening of the DRF branch of project
 - Reformating code to contain business logic in services.py
-- More optimisation
+- More optimization
 ## License
 
 [GPL-3.0 license](https://ru.wikipedia.org/wiki/GNU_General_Public_License#GPL_v3)
